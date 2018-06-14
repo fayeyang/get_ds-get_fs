@@ -1,0 +1,1 @@
+cmd_/home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.o := ld -m elf_x86_64   -r -o /home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.o /home/faye/work/work_normal/gcc_test/KERNEL_DS/kernelds.o 

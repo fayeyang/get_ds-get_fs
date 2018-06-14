@@ -1,0 +1,1 @@
+cmd_/home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.ko /home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.o /home/faye/work/work_normal/gcc_test/KERNEL_DS/kerneldsModule.mod.o ;  true
