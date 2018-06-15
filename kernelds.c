@@ -20,15 +20,15 @@ static int __init kernelds_init( void ){
 	
 	printk( "kernelds_init\n" );
 		
-	fs_bak = get_fs();
-	set_fs( KERNEL_DS );
-	
 	filp = NULL;
 	filp = filp_open( "/home/faye/work/work_normal/gcc_test/KERNEL_DS/file1", O_RDWR, 0 );
 	if( IS_ERR(filp) ){
 		printk( "cannot open file\n" );
 		return 1;
 	}
+		
+	fs_bak = get_fs();
+	set_fs( KERNEL_DS );
 	
 	for( tmp=0; tmp<100; tmp++ ){
 		buf[ tmp ] = 0;
@@ -37,8 +37,9 @@ static int __init kernelds_init( void ){
 	pos = 0;
 	vfs_read( filp, buf, 100, &pos );
 	printk( "%s\n", buf );
-	filp_close( filp, NULL );
 	set_fs( fs_bak );
+	
+	filp_close( filp, NULL );
 	
 	return 0;
 }
